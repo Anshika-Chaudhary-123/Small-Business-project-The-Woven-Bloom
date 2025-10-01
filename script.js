@@ -9,16 +9,12 @@ flipCards.forEach(card => {
 
 // ------------------ CART FUNCTIONALITY ------------------
 
-// Select all ADD buttons
 const addButtons = document.querySelectorAll('.flips button');
 
-// Cart data
 let cart = [];
 
-// Cart section
 const cartSection = document.querySelector("#yourCart");
 
-// Create a container inside cart section
 const cartList = document.createElement("ul");
 const cartTotal = document.createElement("p");
 const buyNowBtn = document.createElement("button");
@@ -39,7 +35,6 @@ cartSection.appendChild(cartList);
 cartSection.appendChild(cartTotal);
 cartSection.appendChild(buyNowBtn);
 
-// Function to update cart UI
 function updateCart() {
     cartList.innerHTML = "";
 
@@ -55,18 +50,15 @@ function updateCart() {
     cartTotal.textContent = `Total Items: ${cart.length} | Total Price: ₹${total}`;
 }
 
-// Add to cart button click
 addButtons.forEach(btn => {
     btn.addEventListener("click", function () {
         const productCard = this.closest(".flips");
         const name = productCard.querySelector(".front h3").textContent.trim();
 
-        // price is in the back side inside <span>Price:
         const backText = productCard.querySelector(".back").textContent;
         const priceMatch = backText.match(/Price:\s*(\d+)/i);
         const price = priceMatch ? parseInt(priceMatch[1]) : 0;
 
-        // Push product to cart
         cart.push({ name, price });
 
         updateCart();
@@ -74,7 +66,6 @@ addButtons.forEach(btn => {
     });
 });
 
-// Buy Now button
 buyNowBtn.addEventListener("click", function () {
     if (cart.length === 0) {
         alert("Your cart is empty!");
@@ -83,4 +74,5 @@ buyNowBtn.addEventListener("click", function () {
     alert("Your items have been purchased!");
     cart = [];
     updateCart();
+
 });
