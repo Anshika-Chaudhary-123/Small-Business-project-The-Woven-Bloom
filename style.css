@@ -103,6 +103,16 @@ span {
   color: #d2691e;
   font-weight: bold;
 }
+
+.hint{
+  text-align:center;
+  font-weight:bold;
+  color:#f52408;
+  text-shadow:0 0 5px #1b1010;
+  padding:20px;
+  font-size:16px;
+}
+
 .flipCard {
   display: flex;
   flex-wrap: wrap;
