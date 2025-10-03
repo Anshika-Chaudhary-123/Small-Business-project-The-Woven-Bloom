@@ -115,7 +115,7 @@ span {
   width: 250px;
   height: 300px;
   position: relative;
-  cursor: grab;
+  cursor: pointer;
   transition: transform 0.3s ease;
 }
 
