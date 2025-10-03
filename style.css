@@ -103,6 +103,13 @@ span {
   color: #d2691e;
   font-weight: bold;
 }
+.hint{
+  font-size:12px;
+  color:gray;
+  text-align:center;
+  margin-top:5px;
+  font-stlye:italix;
+}
 .flipCard {
   display: flex;
   flex-wrap: wrap;
@@ -115,7 +122,13 @@ span {
   width: 250px;
   height: 300px;
   position: relative;
+  cursor:pointer;
+  transition:transform 0.3s ease;
 }
+
+.flips:hover{
+  transform:scale(1.02);
+  box-shadow:0 4px 8px rgba(0,0,0,0.2);
 
 .flips .front, .flips .back {
   width: 100%;
@@ -208,4 +221,5 @@ footer .contact-social a i {
   font-size: 24px;
   margin-right: 10px;
   vertical-align: middle;
+
 }
